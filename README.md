@@ -1,6 +1,6 @@
 # Using IgBlast with Python
 
-Since IgBlast [documentation](https://ncbi.github.io/igblast/cook/How-to-set-up.html) does not have great details on the database setup, and there are a lot of questions on the forum regarding to the issue **internal_data could not be found**, I wrote this short guide to in case it might be helpful.
+Since IgBlast [documentation](https://ncbi.github.io/igblast/cook/How-to-set-up.html) does not have great details on the database setup, and there are a lot of questions on the forum regarding to the issue **internal_data could not be found** or the **Germline annotation database...could not be found in [internal_data] directory**, I wrote this short guide to in case it might be helpful.
 
 This first part of this guide applies to installation of IgBlast and IMGT human germline sequence database. The second part applies to calling the IgBlast executable inside Jupyter notebook and converting some of the results to Pandas dataframe.
 
