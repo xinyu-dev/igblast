@@ -122,6 +122,7 @@ bin/makeblastdb -parse_seqids -dbtype prot -in database/Homo_sapiens_clean/IG_pr
 ```
 
 Igblast will create a variety of files in the same directory as the cleaned germline sequence text file. A screenshot is shown below:
+
 ![](https://res.cloudinary.com/dpfqlyh21/image/upload/v1610207632/github/Screen_Shot_2021-01-09_at_10.53.25_AM_sktrlq.png)
 
 ## Method 2: Use Python
