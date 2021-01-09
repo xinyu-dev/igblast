@@ -355,12 +355,41 @@ export IGDATA=/Users/mightycamole/Desktop/DataScience/Python/Work/igblast/bin
 ```
 Replace the file path with your file path
 
-## Parse your sequence
+## Parse your sequence into Pandas Dataframe
 
-Suppose you have a folder called **test** inside **igblast**. The folder contains Rituximab VH and VL sequence in fasta format.  Below are 3 exmaple output formats:
+Suppose you have a folder called **test** inside **igblast**. The folder contains Rituximab VH and VL sequence in fasta format.  Below are 3 examples of parsing:
 
 1. In Example 1, we parse query seuqence in terminal.
-2. In Example 2, the code will parse the closest germline matching hits into pandas dataframe.
-3. In Example 3, the code will try to determine if a light chain sequence is a kappa or lambda type.
+2. In Example 2, the code will parse the closest germline matching hits into pandas dataframe. 
 
-See jupyter notebook for details on the examples
+Example:
+```python
+df, top_germ_allele, top_identity = blastp_get_top_hits_v(
+    input_fp = 'test/Rituximab-VH.fasta',
+    db_fp= 'database/Homo_sapiens_clean/IG_prot/IGHV_clean'
+)
+print('best match germline: ', top_germ_allele)
+print('identity %: ', top_identity)
+df
+```
+Output: 
+
+![](https://res.cloudinary.com/dpfqlyh21/image/upload/v1610218041/github/Screen_Shot_2021-01-09_at_1.46.54_PM_a4x8pk.png)
+
+3. In Example 3, the code will try to determine if a light chain sequence is a kappa or lambda type. 
+
+Example:
+```python
+df, top_germ_allele, top_identity = blastp_multiple_hits_v(
+    input_fp = 'test/Rituximab-VL.fasta',
+    db_lst= ['database/Homo_sapiens_clean/IG_prot/IGKV_clean','database/Homo_sapiens_clean/IG_prot/IGLV_clean']
+)
+print('best match germline: ', top_germ_allele)
+print('identity %: ', top_identity)
+df
+```
+Output:
+
+![](https://res.cloudinary.com/dpfqlyh21/image/upload/v1610218043/github/Screen_Shot_2021-01-09_at_1.47.07_PM_n6cw75.png)
+
+**See jupyter notebook for details on the examples**
