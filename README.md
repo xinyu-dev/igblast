@@ -80,7 +80,7 @@ You can execute the command through terminal, or using the python script below.
 
 Open a terminal at the **igblast** folder. Then type
 ```
-bin/edit_imgt_file.pl database/Homo_sapiens/IG_prot/IGKV > database/Homo_sapiens_clean/IG_prot/IGHV_KV_clean
+bin/edit_imgt_file.pl database/Homo_sapiens/IG_prot/IGKV > database/Homo_sapiens_clean/IG_prot/IGHV_clean
 ```
 The above line cleans up the IGKV text file you just made, and save the cleaned file inside **Homo_sapiens_clean/IG_prot** folder.
 
@@ -366,7 +366,7 @@ Suppose you have a folder called **test** inside **igblast**. The folder contain
 Example:
 ```python
 df, top_germ_allele, top_identity = blastp_get_top_hits_v(
-    input_fp = 'test/Rituximab-VH.fasta',
+    input_fp = 'scratch/Rituximab-VH.fasta',
     db_fp= 'database/Homo_sapiens_clean/IG_prot/IGHV_clean'
 )
 print('best match germline: ', top_germ_allele)
@@ -382,7 +382,7 @@ Output:
 Example:
 ```python
 df, top_germ_allele, top_identity = blastp_multiple_hits_v(
-    input_fp = 'test/Rituximab-VL.fasta',
+    input_fp = 'scratch/Rituximab-VL.fasta',
     db_lst= ['database/Homo_sapiens_clean/IG_prot/IGKV_clean','database/Homo_sapiens_clean/IG_prot/IGLV_clean']
 )
 print('best match germline: ', top_germ_allele)
